@@ -21,9 +21,9 @@ Converts a byte array into a passphrase.
 
 **Kind**: static method of <code>[niceware](#exp_module_niceware--niceware)</code>  
 
-| Param | Type |
-| --- | --- |
-| bytes | <code>Buffer</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| bytes | <code>Buffer</code> | The bytes to convert |
 
 <a name="module_niceware--niceware.passphraseToBytes"></a>
 
@@ -32,18 +32,19 @@ Converts a phrase back into the original byte array.
 
 **Kind**: static method of <code>[niceware](#exp_module_niceware--niceware)</code>  
 
-| Param | Type |
-| --- | --- |
-| words | <code>Array.&lt;string&gt;</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| words | <code>Array.&lt;string&gt;</code> | The words to convert |
 
 <a name="module_niceware--niceware.generatePassphrase"></a>
 
 #### niceware.generatePassphrase(size) ⇒ <code>Array.&lt;string&gt;</code>
 Generates a random passphrase with the specified number of bytes.
+NOTE: `size` must be an even number.
 
 **Kind**: static method of <code>[niceware](#exp_module_niceware--niceware)</code>  
 
-| Param | Type |
-| --- | --- |
-| size | <code>number</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| size | <code>number</code> | The number of random bytes to use |
 
