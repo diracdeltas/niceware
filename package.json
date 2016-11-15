@@ -14,13 +14,18 @@
   "main": "lib/main.js",
   "devDependencies": {
     "browserify": "^13.1.1",
+    "coveralls": "^2.11.15",
     "flow-bin": "^0.35.0",
+    "istanbul": "^0.4.5",
     "jsdoc-to-markdown": "^2.0.1",
     "mocha": "^3.1.2",
+    "mocha-lcov-reporter": "^1.2.0",
     "standard": "^8.1.0"
   },
   "scripts": {
     "browserify": "browserify lib/main.js -o browser/niceware.js",
+    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec",
+    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "jsdoc": "jsdoc2md lib/main.js > docs/api.md",
     "flow": "flow; test $? -eq 0 -o $? -eq 2",
     "test": "mocha"
