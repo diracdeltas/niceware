@@ -3,4 +3,4 @@ language: node_js
 node_js:
   - "node"
 script:
-  - npm run flow && npm test
+  - npm run flow && npm run check && npm run coverage

@@ -1,6 +1,6 @@
 {
   "name": "niceware",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Utility for converting cryptographic keys into human-readable phrases",
   "keywords": [
     "diceware",
@@ -20,10 +20,12 @@
     "jsdoc-to-markdown": "^2.0.1",
     "mocha": "^3.1.2",
     "mocha-lcov-reporter": "^1.2.0",
+    "nsp": "^2.6.2",
     "standard": "^8.1.0"
   },
   "scripts": {
-    "browserify": "browserify lib/main.js -o browser/niceware.js",
+    "build": "browserify lib/main.js -o browser/niceware.js",
+    "check": "nsp check",
     "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec",
     "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "jsdoc": "jsdoc2md lib/main.js > docs/api.md",
