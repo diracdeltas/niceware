@@ -25,7 +25,8 @@ const passphrase = niceware.generatePassphrase(8)
 
 ## Usage in browser
 
-To use Niceware in modern browsers, include `browser/niceware.js` in a script
+To use Niceware in modern browsers, include
+[browser/niceware.js](browser/niceware.js) in a script
 tag. Niceware is then available in the `window.niceware` object.
 
 ```
@@ -39,7 +40,7 @@ Niceware uses `window.{crypto, msCrypto}.getRandomValues` for entropy in the bro
 
 ## Docs
 
-Note: When used in the browser, `Buffer` is replaced with `window.Uint8Array`.
+NOTE: When used in the browser, `Buffer` is replaced with `window.Uint8Array`.
 
 * [niceware](#exp_module_niceware--niceware) ⏏
     * [.bytesToPassphrase(bytes)](#module_niceware--niceware.bytesToPassphrase) ⇒ <code>Array.&lt;string&gt;</code>
