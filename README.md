@@ -1,5 +1,7 @@
 # niceware
 
+[![Build Status](https://travis-ci.org/diracdeltas/niceware.svg?branch=master)](https://travis-ci.org/diracdeltas/niceware)
+
 A module for converting cryptographic keys into human-readable phrases, similar
 to [Diceware](http://world.std.com/~reinhold/diceware.html) but with a larger
 wordlist. With Niceware, a 128-bit key is equivalent to an 8-word phrase.
