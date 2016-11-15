@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <h2>Niceware</h2>
+        <p>
+            Niceware words are chosen at random from a list of 65,536 English language words. Each word
+            has ~16 bits of entropy. An 8 word random passphrase has 128 bits of entropy which
+            is strong enough to use for cryptographic keys. In comparison, words chosen
+            from a standard Diceware list with 7,776 words have ~12.92 bits of entropy per word
+            and therefore require more words to achieve the same security level.
+        </p>
+
+        <h3>Passphrase</h3>
+        <p>(reload for a new passphrase)</p>
+        <pre id="output"></pre>
+
+        <script src='browser/niceware.js'></script>
+        <script>
+          var passphrase = window.niceware.generatePassphrase(16)
+          document.getElementById("output").innerHTML = passphrase.join(' ')
+          console.log(passphrase)
+        </script>
+    </body>
+</html>
