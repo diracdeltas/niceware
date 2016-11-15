@@ -2,11 +2,22 @@
 
 [![Build Status](https://travis-ci.org/diracdeltas/niceware.svg?branch=master)](https://travis-ci.org/diracdeltas/niceware)
 
-A module for converting cryptographic keys into human-readable phrases, similar
-to [Diceware](http://world.std.com/~reinhold/diceware.html) but with a larger
-wordlist. With Niceware, a 128-bit key is equivalent to an 8-word phrase.
+A javascript module for converting cryptographic keys and other sequences of random bytes into human-readable phrases, similar to [Diceware](http://world.std.com/~reinhold/diceware.html) but with a larger wordlist of size `2^16`. With Niceware, a 128-bit key is equivalent to an 8-word phrase.
 
-## Usage in node
+## Sample use cases
+
+* Niceware can be used to generate secure, semi-memorable, easy-to-type
+  passphrases. A random 3-5 word phrase in Niceware is equivalent to a strong
+  password for authentication to most online services. For instance,
+  `+8svofk0Y1o=` and `bacca cavort west volley` are equally strong (64 bits of
+  randomness).
+* Niceware can be used to display cryptographic key material in a way that
+  users can easily backup or copy between devices. For instance, the 128-bit
+  random seed used to generate a 256-bit ECC key (~equivalent to
+  a 3072-bit RSA key) is only 8 Niceware words. With this 8-word phrase, you
+  can reconstruct the entire public/private keypair.
+
+## Usage in Node
 
 To install:
 
@@ -39,6 +50,11 @@ tag. Niceware is then available in the `window.niceware` object.
 ```
 
 Niceware uses `window.{crypto, msCrypto}.getRandomValues` for entropy in the browser.
+
+## Other
+
+Niceware is also available as a third-party Chrome extension, thanks to Noah
+Feder. https://chrome.google.com/webstore/detail/niceware-password/dhnichgmciickpnnnhfcljljnfomadag
 
 ## Docs
 
