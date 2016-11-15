@@ -1,6 +1,6 @@
 {
   "name": "niceware",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "Utility for converting cryptographic keys into human-readable phrases",
   "keywords": [
     "diceware",
