@@ -1,0 +1,39 @@
+{
+  "name": "niceware",
+  "version": "0.0.1",
+  "description": "Utility for converting cryptographic keys into human-readable phrases",
+  "keywords": [
+    "diceware",
+    "passphrase",
+    "password",
+    "crypto",
+    "cryptography",
+    "encryption"
+  ],
+  "homepage": "http://www.github.com/diracdeltas/niceware",
+  "main": "lib/main.js",
+  "devDependencies": {
+    "browserify": "^13.1.1",
+    "flow-bin": "^0.35.0",
+    "mocha": "^3.1.2",
+    "standard": "^8.1.0"
+  },
+  "scripts": {
+    "flow": "flow; test $? -eq 0 -o $? -eq 2",
+    "test": "mocha"
+  },
+  "standard": {
+    "ignore": [
+      "lib/wordlist.js"
+    ]
+  },
+  "author": "yan <yan@mit.edu>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/diracdeltas/niceware.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "binary-search": "^1.3.2"
+  }
+}
