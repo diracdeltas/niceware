@@ -15,11 +15,13 @@
   "devDependencies": {
     "browserify": "^13.1.1",
     "flow-bin": "^0.35.0",
+    "jsdoc-to-markdown": "^2.0.1",
     "mocha": "^3.1.2",
     "standard": "^8.1.0"
   },
   "scripts": {
     "browserify": "browserify lib/main.js -o browser/niceware.js",
+    "jsdoc": "jsdoc2md lib/main.js > docs/api.md",
     "flow": "flow; test $? -eq 0 -o $? -eq 2",
     "test": "mocha"
   },
