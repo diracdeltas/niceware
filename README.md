@@ -85,3 +85,11 @@ NOTE: `size` must be an even number.
 | --- | --- | --- |
 | size | <code>number</code> | The number of random bytes to use |
 
+
+## Credits
+
+Niceware was inspired by
+[Diceware](http://world.std.com/~reinhold/diceware.html). Its wordlist is
+derived from http://www-01.sil.org/linguistics/wordlists/english/. This project
+is based on my work on OpenPGP key backup for the Yahoo
+[End-to-End](https://github.com/yahoo/end-to-end) project.
