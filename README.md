@@ -4,6 +4,8 @@
 
 A javascript module for converting cryptographic keys and other sequences of random bytes into human-readable phrases, similar to [Diceware](http://world.std.com/~reinhold/diceware.html) but with a larger wordlist of size `2^16`. With Niceware, a 128-bit key is equivalent to an 8-word phrase.
 
+Demo: https://diracdeltas.github.io/niceware/
+
 ## Sample use cases
 
 * Niceware can be used to generate secure, semi-memorable, easy-to-type
