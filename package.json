@@ -1,13 +1,18 @@
 {
   "name": "niceware",
   "version": "1.0.1",
-  "description": "Utility for converting cryptographic keys into human-readable phrases",
+  "description": "Utility for generating memorable passwords and converting random bytes into human-readable phrases",
   "keywords": [
     "diceware",
     "passphrase",
     "password",
+    "generator",
+    "password generator",
+    "dictionary",
     "crypto",
     "cryptography",
+    "random",
+    "entropy",
     "encryption"
   ],
   "homepage": "http://www.github.com/diracdeltas/niceware",
