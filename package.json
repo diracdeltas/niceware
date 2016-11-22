@@ -17,7 +17,22 @@
   ],
   "homepage": "http://www.github.com/diracdeltas/niceware",
   "main": "lib/main.js",
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ]
+    ]
+  },
   "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-preset-es2015": "^6.18.0",
+    "babelify": "^7.3.0",
     "browserify": "^13.1.1",
     "coveralls": "^2.11.15",
     "flow-bin": "^0.35.0",
@@ -26,10 +41,13 @@
     "mocha": "^3.1.2",
     "mocha-lcov-reporter": "^1.2.0",
     "nsp": "^2.6.2",
-    "standard": "^8.1.0"
+    "optimize-js": "^1.0.2",
+    "standard": "^8.1.0",
+    "uglify-js": "^2.7.4",
+    "uglifyify": "^3.0.4"
   },
   "scripts": {
-    "build": "browserify lib/main.js -o browser/niceware.js",
+    "build": "browserify lib/main.js -g uglifyify | uglifyjs -cm | optimize-js > browser/niceware.js",
     "check": "nsp check",
     "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec",
     "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
