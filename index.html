@@ -19,7 +19,10 @@
         </p>
 
 <div>
-        <h3>Demo: Generating a Passphrase</h3>
+        <h3>Demo #1: Generate a Passphrase</h3>
+        <p style='font-size: 18px'>
+        <b>**For demonstration purposes only! You should not trust a third-party online tool to generate your passwords.**</b>
+        </p>
         Passphrase strength:
         <select name='size'>
             <option value='2'>16 bits</option>
@@ -32,7 +35,23 @@
             <option value='16'>128 bits</option>
         </select>
         <button onclick="generatePassphrase()">Generate passphrase</button>
-        <pre id="output"></pre>
+        <pre id="output" style="color:green;"></pre>
+</div><div style='margin-top: 40px;'>
+        <h3>Demo #2: Convert hex to readable text</h3>
+        <textarea placeholder='Enter some hex in here:' style='margin-bottom: 10px; width:400px; height:100px;'></textarea>
+        <div>
+          <button onclick="hexToWords()">Convert to words</button>
+          <span style='color: red; font-size: 16px;' id='error'></span>
+        </div>
+        <pre id="output2" style='margin-top: 10px; color: green'></pre>
+</div><div>
+        <h3>Demo #3: Convert a Niceware phrase to hex</h3>
+        <input placeholder='Enter phrase here:' style='margin-bottom: 10px; width:400px;' />
+        <div>
+          <button onclick="wordsToHex()">Convert to hex</button>
+          <span style='color: red; font-size: 16px;' id='error2'></span>
+        </div>
+        <pre id="output3" style='margin-top: 10px; color: green'></pre>
 </div>
 </div>
 
@@ -42,7 +61,49 @@
             var e = document.querySelector('select')
             var size = e.options[e.selectedIndex].value
             var passphrase = window.niceware.generatePassphrase(Number(size))
-            document.getElementById("output").innerHTML = passphrase.join(' ')
+            document.getElementById("output").innerText = passphrase.join(' ')
+          }
+          function hexToWords () {
+            document.querySelector('#error').innerText = ''
+            var text = document.querySelector('textarea').value
+            try {
+              text = text.toLowerCase().replace(/[,\s]/g, '')
+              if (text.length % 2 === 1) {
+                text = '0' + text
+              }
+              const arr = new Uint8Array(text.length / 2)
+              for (var i = 0; i < text.length / 2; i++) {
+                let val = Number('0x' + text[2 * i] + text[2 * i + 1])
+                if (val > 0 && val < 256) {
+                  arr[i] = val
+                } else {
+                  throw new Error('Text must be hex-encoded.')
+                }
+              }
+              document.getElementById("output2").innerText =
+                window.niceware.bytesToPassphrase(arr).join(' ')
+            } catch (e) {
+              document.querySelector('#error').innerText = 'Error: ' + e.message
+            }
+          }
+          function wordsToHex () {
+            document.querySelector('#error2').innerText = ''
+            var text = document.querySelector('input').value
+            try {
+              text = text.toLowerCase().replace(/,/g, ' ').replace(/\s+/g, ' ')
+              const byteArray = window.niceware.passphraseToBytes(text.split(' '))
+              var str = ''
+              for (var i = 0; i < byteArray.length; i++) {
+                let char = byteArray[i].toString(16)
+                if (char.length === 1) {
+                  char = '0' + char
+                }
+                str = str + char
+              }
+              document.getElementById("output3").innerText = str
+            } catch (e) {
+              document.querySelector('#error2').innerText = 'Error: ' + e.message
+            }
           }
         </script>
     </body>
