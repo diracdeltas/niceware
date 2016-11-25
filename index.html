@@ -74,7 +74,7 @@
               const arr = new Uint8Array(text.length / 2)
               for (var i = 0; i < text.length / 2; i++) {
                 let val = Number('0x' + text[2 * i] + text[2 * i + 1])
-                if (val > 0 && val < 256) {
+                if (val >= 0 && val < 256) {
                   arr[i] = val
                 } else {
                   throw new Error('Text must be hex-encoded.')
