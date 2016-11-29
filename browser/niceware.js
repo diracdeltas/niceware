@@ -8,7 +8,7 @@
 
 const bs = require('binary-search')
 const wordlist = require('./wordlist')
-const randomBytes = require('randombytes');
+const randomBytes = require('randombytes')
 
 const MAX_PASSPHRASE_SIZE = 1024 // Max size of passphrase in bytes
 
@@ -73,7 +73,7 @@ niceware.passphraseToBytes = function (words/* : Array<string> */) {
       return a > b ? 1 : -1
     })
     if (wordIndex < 0) {
-      throw new Error('Invalid passphrase.')
+      throw new Error('Invalid word: ' + word)
     }
     bytes[2 * index] = Math.floor(wordIndex / 256)
     bytes[2 * index + 1] = wordIndex % 256
