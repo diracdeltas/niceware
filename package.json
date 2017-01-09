@@ -32,13 +32,15 @@
     "build": "browserify lib/main.js -o browser/niceware.js",
     "check": "nsp check",
     "coverage": "istanbul cover tape test/**/*.js --report lcovonly -- -R spec",
+    "lint": "standard",
     "jsdoc": "jsdoc2md lib/main.js > docs/api.md",
     "flow": "flow; test $? -eq 0 -o $? -eq 2",
     "test": "tape test/**/*.js"
   },
   "standard": {
     "ignore": [
-      "lib/wordlist.js"
+      "lib/wordlist.js",
+      "browser/niceware.js"
     ]
   },
   "author": "yan <yan@mit.edu>",
