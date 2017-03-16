@@ -4,7 +4,7 @@
 
 A JS library for generating random-yet-memorable passwords, either server-side in Node or in the browser. Each word provides 16 bits of entropy, so a useful password requires at least 3 words.
 
-Because the wordlist is of exactly size 2^16, Niceware is also userful for convert cryptographic keys and other sequences of random bytes into human-readable phrases. With Niceware, a 128-bit key is equivalent to an 8-word phrase.
+Because the wordlist is of exactly size 2^16, Niceware is also useful for convert cryptographic keys and other sequences of random bytes into human-readable phrases. With Niceware, a 128-bit key is equivalent to an 8-word phrase.
 
 Demo: https://diracdeltas.github.io/niceware/
 
