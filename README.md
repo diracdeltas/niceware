@@ -55,12 +55,6 @@ tag. Niceware is then available in the `window.niceware` object.
 
 Niceware uses `window.{crypto, msCrypto}.getRandomValues` for entropy in the browser.
 
-## Niceware ports
-
-* Chrome extension, thanks to Noah Feder: https://chrome.google.com/webstore/detail/niceware-password/dhnichgmciickpnnnhfcljljnfomadag
-* pip package, thanks to Alex Willmer: https://pypi.python.org/pypi/niceware
-* CLI, thanks to Alex Cross: https://www.npmjs.com/package/nicepass
-
 ## Docs
 
 NOTE: When used in the browser, `Buffer` is replaced with `window.Uint8Array`.
@@ -108,6 +102,12 @@ NOTE: `size` must be an even number.
 | --- | --- | --- |
 | size | <code>number</code> | The number of random bytes to use |
 
+
+## Niceware ports
+
+* Chrome extension, thanks to Noah Feder: https://chrome.google.com/webstore/detail/niceware-password/dhnichgmciickpnnnhfcljljnfomadag
+* pip package, thanks to Alex Willmer: https://pypi.python.org/pypi/niceware
+* CLI, thanks to Alex Cross: https://www.npmjs.com/package/nicepass
 
 ## Credits
 
