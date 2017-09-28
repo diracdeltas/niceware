@@ -55,10 +55,11 @@ tag. Niceware is then available in the `window.niceware` object.
 
 Niceware uses `window.{crypto, msCrypto}.getRandomValues` for entropy in the browser.
 
-## Other
+## Niceware ports
 
-Niceware is also available as a third-party Chrome extension, thanks to Noah
-Feder. https://chrome.google.com/webstore/detail/niceware-password/dhnichgmciickpnnnhfcljljnfomadag
+* Chrome extension, thanks to Noah Feder: https://chrome.google.com/webstore/detail/niceware-password/dhnichgmciickpnnnhfcljljnfomadag
+* pip package, thanks to Alex Willmer: https://pypi.python.org/pypi/niceware
+* CLI, thanks to Alex Cross: https://www.npmjs.com/package/nicepass
 
 ## Docs
 
