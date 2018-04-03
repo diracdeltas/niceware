@@ -19,7 +19,7 @@ A module for converting cryptographic keys into human-readable phrases.
 #### niceware.bytesToPassphrase(bytes) ⇒ <code>Array.&lt;string&gt;</code>
 Converts a byte array into a passphrase.
 
-**Kind**: static method of <code>[niceware](#exp_module_niceware--niceware)</code>  
+**Kind**: static method of [<code>niceware</code>](#exp_module_niceware--niceware)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -30,7 +30,7 @@ Converts a byte array into a passphrase.
 #### niceware.passphraseToBytes(words) ⇒ <code>Buffer</code>
 Converts a phrase back into the original byte array.
 
-**Kind**: static method of <code>[niceware](#exp_module_niceware--niceware)</code>  
+**Kind**: static method of [<code>niceware</code>](#exp_module_niceware--niceware)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -42,7 +42,7 @@ Converts a phrase back into the original byte array.
 Generates a random passphrase with the specified number of bytes.
 NOTE: `size` must be an even number.
 
-**Kind**: static method of <code>[niceware](#exp_module_niceware--niceware)</code>  
+**Kind**: static method of [<code>niceware</code>](#exp_module_niceware--niceware)  
 
 | Param | Type | Description |
 | --- | --- | --- |

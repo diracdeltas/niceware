@@ -77,4 +77,3 @@ test('passphraseToBytes', function (t) {
     ))
   })
 })
-
