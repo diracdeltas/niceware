@@ -18,19 +18,18 @@
   "homepage": "http://www.github.com/diracdeltas/niceware",
   "main": "lib/main.js",
   "devDependencies": {
-    "browserify": "^16.1.1",
+    "browserify": "^16.2.3",
     "coveralls": "^3.0.0",
     "flow-bin": "^0.35.0",
     "istanbul": "^0.4.5",
     "jsdoc-to-markdown": "^4.0.1",
-    "nsp": "^3.2.1",
     "standard": "^11.0.1",
     "tape": "^4.9.0"
   },
   "scripts": {
     "browsertest": "browserify test/*.js > testbundle.js && python -m SimpleHTTPServer",
     "build": "browserify lib/main.js -o browser/niceware.js",
-    "check": "nsp check",
+    "check": "npm audit",
     "coverage": "istanbul cover tape test/**/*.js --report lcovonly -- -R spec",
     "lint": "standard",
     "jsdoc": "jsdoc2md lib/main.js > docs/api.md",
