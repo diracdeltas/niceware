@@ -1,6 +1,6 @@
 {
   "name": "niceware",
-  "version": "1.0.7",
+  "version": "2.0.0",
   "description": "Utility for generating memorable passwords and converting random bytes into human-readable phrases",
   "keywords": [
     "diceware",
