@@ -8,6 +8,9 @@ Because the wordlist is of exactly size 2^16, Niceware is also useful for conver
 
 Demo: https://diracdeltas.github.io/niceware/
 
+**WARNING: The wordlist has not been rigorously checked for offensive words.
+Use at your own risk.**
+
 ## Sample use cases
 
 * Niceware can be used to generate secure, semi-memorable, easy-to-type
