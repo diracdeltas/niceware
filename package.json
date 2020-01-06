@@ -27,7 +27,7 @@
     "tape": "^4.9.0"
   },
   "scripts": {
-    "browsertest": "browserify test/*.js > testbundle.js && python -m SimpleHTTPServer",
+    "browsertest": "browserify test/*.js > testbundle.js && python3 -m http.server 8000 --bind 127.0.0.1",
     "build": "browserify lib/main.js -o browser/niceware.js",
     "check": "npm audit",
     "coverage": "istanbul cover tape test/**/*.js --report lcovonly -- -R spec",
