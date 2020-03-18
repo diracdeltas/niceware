@@ -18,13 +18,14 @@
   "homepage": "http://www.github.com/diracdeltas/niceware",
   "main": "lib/main.js",
   "devDependencies": {
-    "browserify": "^16.2.3",
-    "coveralls": "^3.0.0",
+    "browserify": "^16.5.0",
+    "coveralls": "^3.0.9",
     "flow-bin": "^0.35.0",
     "istanbul": "^0.4.5",
-    "jsdoc-to-markdown": "^5.0.0",
+    "jsdoc-to-markdown": "^5.0.3",
+    "npm-force-resolutions": "0.0.3",
     "standard": "^11.0.1",
-    "tape": "^4.9.0"
+    "tape": "^4.13.2"
   },
   "scripts": {
     "browsertest": "browserify test/*.js > testbundle.js && python3 -m http.server 8000 --bind 127.0.0.1",
@@ -34,6 +35,7 @@
     "lint": "standard",
     "jsdoc": "jsdoc2md lib/main.js > docs/api.md",
     "flow": "flow; test $? -eq 0 -o $? -eq 2",
+    "preinstall": "npx npm-force-resolutions",
     "test": "tape test/**/*.js"
   },
   "standard": {
@@ -42,6 +44,9 @@
       "browser/niceware.js"
     ]
   },
+  "resolutions": {
+    "minimist": "1.2.3"
+  },
   "author": "yan <yan@mit.edu>",
   "repository": {
     "type": "git",
@@ -49,7 +54,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "binary-search": "^1.3.3",
+    "binary-search": "^1.3.6",
     "randombytes": "^2.0.6"
   }
 }
