@@ -19,23 +19,23 @@
   "main": "lib/main.js",
   "devDependencies": {
     "browserify": "^16.5.0",
-    "coveralls": "^3.0.9",
-    "flow-bin": "^0.35.0",
-    "istanbul": "^0.4.5",
-    "jsdoc-to-markdown": "^5.0.3",
-    "npm-force-resolutions": "0.0.3",
+    "optional-dev-dependency": "^2.0.1",
     "standard": "^11.0.1",
     "tape": "^4.13.2"
+  },
+  "optionalDevDependencies": {
+    "jsdoc-to-markdown": [
+      "^5.0.0",
+      "jsdoc"
+    ]
   },
   "scripts": {
     "browsertest": "browserify test/*.js > testbundle.js && python3 -m http.server 8000 --bind 127.0.0.1",
     "build": "browserify lib/main.js -o browser/niceware.js",
     "check": "npm audit",
-    "coverage": "istanbul cover tape test/**/*.js --report lcovonly -- -R spec",
     "lint": "standard",
+    "prejsdoc": "optional-dev-dependency -t jsdoc",
     "jsdoc": "jsdoc2md lib/main.js > docs/api.md",
-    "flow": "flow; test $? -eq 0 -o $? -eq 2",
-    "preinstall": "npx npm-force-resolutions",
     "test": "tape test/**/*.js"
   },
   "standard": {
@@ -43,9 +43,6 @@
       "lib/wordlist.js",
       "browser/niceware.js"
     ]
-  },
-  "resolutions": {
-    "minimist": "1.2.3"
   },
   "author": "yan <yan@mit.edu>",
   "repository": {
