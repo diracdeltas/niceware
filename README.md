@@ -22,7 +22,7 @@ Use at your own risk.**
   users can easily backup or copy between devices. For instance, the 128-bit
   random seed used to generate a 256-bit ECC key (~equivalent to
   a 3072-bit RSA key) is only 8 Niceware words. With this 8-word phrase, you
-  can reconstruct the entire public/private keypair.
+  can reconstruct the entire public/private key pair.
 
 ## Usage in Node
 
