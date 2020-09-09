@@ -19,22 +19,15 @@
   "main": "lib/main.js",
   "devDependencies": {
     "browserify": "^16.5.0",
-    "optional-dev-dependency": "^2.0.1",
+    "jsdoc-to-markdown": "^6.0.1",
     "standard": "^11.0.1",
     "tape": "^4.13.2"
-  },
-  "optionalDevDependencies": {
-    "jsdoc-to-markdown": [
-      "^5.0.0",
-      "jsdoc"
-    ]
   },
   "scripts": {
     "browsertest": "browserify test/*.js > testbundle.js && python3 -m http.server 8000 --bind 127.0.0.1",
     "build": "browserify lib/main.js -o browser/niceware.js",
     "check": "npm audit",
     "lint": "standard",
-    "prejsdoc": "optional-dev-dependency -t jsdoc",
     "jsdoc": "jsdoc2md lib/main.js > docs/api.md",
     "test": "tape test/**/*.js"
   },
