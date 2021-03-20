@@ -8,6 +8,9 @@ Because the wordlist is of exactly size 2^16, Niceware is also useful for conver
 
 Demo: https://diracdeltas.github.io/niceware/
 
+**WARNING: The wordlist has not been rigorously checked for offensive words.
+Use at your own risk.**
+
 ## Sample use cases
 
 * Niceware can be used to generate secure, semi-memorable, easy-to-type
@@ -19,7 +22,7 @@ Demo: https://diracdeltas.github.io/niceware/
   users can easily backup or copy between devices. For instance, the 128-bit
   random seed used to generate a 256-bit ECC key (~equivalent to
   a 3072-bit RSA key) is only 8 Niceware words. With this 8-word phrase, you
-  can reconstruct the entire public/private keypair.
+  can reconstruct the entire public/private key pair.
 
 ## Usage in Node
 
