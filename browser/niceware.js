@@ -1,5 +1,5 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-(function (Buffer){
+(function (Buffer){(function (){
 'use strict'
 // @flow
 /**
@@ -34,13 +34,13 @@ niceware.bytesToPassphrase = function (bytes) {
     throw new Error('Only even-sized byte arrays are supported.')
   }
   const words = []
-  for (var entry of bytes.entries()) {
-    let index = entry[0]
-    let byte = entry[1]
-    let next = bytes[index + 1]
+  for (const entry of bytes.entries()) {
+    const index = entry[0]
+    const byte = entry[1]
+    const next = bytes[index + 1]
     if (index % 2 === 0) {
-      let wordIndex = byte * 256 + next
-      let word = wordlist[wordIndex]
+      const wordIndex = byte * 256 + next
+      const word = wordlist[wordIndex]
       if (!word) {
         throw new Error('Invalid byte encountered')
       } else {
@@ -104,7 +104,7 @@ if (typeof window === 'object') {
 
 module.exports = niceware
 
-}).call(this,require("buffer").Buffer)
+}).call(this)}).call(this,require("buffer").Buffer)
 },{"./wordlist":2,"binary-search":4,"buffer":5,"randombytes":8}],2:[function(require,module,exports){
 /**
  * @fileoverview 2^16 English wordlist. Derived from
@@ -65720,7 +65720,8 @@ function toByteArray (b64) {
     ? validLen - 4
     : validLen
 
-  for (var i = 0; i < len; i += 4) {
+  var i
+  for (i = 0; i < len; i += 4) {
     tmp =
       (revLookup[b64.charCodeAt(i)] << 18) |
       (revLookup[b64.charCodeAt(i + 1)] << 12) |
@@ -65779,9 +65780,7 @@ function fromByteArray (uint8) {
 
   // go through the array every three bytes, we'll deal with trailing stuff later
   for (var i = 0, len2 = len - extraBytes; i < len2; i += maxChunkLength) {
-    parts.push(encodeChunk(
-      uint8, i, (i + maxChunkLength) > len2 ? len2 : (i + maxChunkLength)
-    ))
+    parts.push(encodeChunk(uint8, i, (i + maxChunkLength) > len2 ? len2 : (i + maxChunkLength)))
   }
 
   // pad the end with zeros, but make sure to not forget the extra bytes
@@ -65828,30 +65827,32 @@ module.exports = function(haystack, needle, comparator, low, high) {
   }
 
   while(low <= high) {
-    /* Note that "(low + high) >>> 1" may overflow, and results in a typecast
-     * to double (which gives the wrong results). */
-    mid = low + (high - low >> 1);
+    // The naive `low + high >>> 1` could fail for array lengths > 2**31
+    // because `>>>` converts its operands to int32. `low + (high - low >>> 1)`
+    // works for array lengths <= 2**32-1 which is also Javascript's max array
+    // length.
+    mid = low + ((high - low) >>> 1);
     cmp = +comparator(haystack[mid], needle, mid, haystack);
 
-    /* Too low. */
+    // Too low.
     if(cmp < 0.0)
       low  = mid + 1;
 
-    /* Too high. */
+    // Too high.
     else if(cmp > 0.0)
       high = mid - 1;
 
-    /* Key found. */
+    // Key found.
     else
       return mid;
   }
 
-  /* Key not found. */
+  // Key not found.
   return ~low;
 }
 
 },{}],5:[function(require,module,exports){
-(function (Buffer){
+(function (Buffer){(function (){
 /*!
  * The buffer module from node.js, for the browser.
  *
@@ -67630,8 +67631,9 @@ function numberIsNaN (obj) {
   return obj !== obj // eslint-disable-line no-self-compare
 }
 
-}).call(this,require("buffer").Buffer)
+}).call(this)}).call(this,require("buffer").Buffer)
 },{"base64-js":3,"buffer":5,"ieee754":6}],6:[function(require,module,exports){
+/*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
   var eLen = (nBytes * 8) - mLen - 1
@@ -67904,7 +67906,7 @@ process.chdir = function (dir) {
 process.umask = function() { return 0; };
 
 },{}],8:[function(require,module,exports){
-(function (process,global){
+(function (process,global){(function (){
 'use strict'
 
 // limit of Crypto.getRandomValues()
@@ -67956,8 +67958,9 @@ function randomBytes (size, cb) {
   return bytes
 }
 
-}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+}).call(this)}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"_process":7,"safe-buffer":9}],9:[function(require,module,exports){
+/*! safe-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
 /* eslint-disable node/no-deprecated-api */
 var buffer = require('buffer')
 var Buffer = buffer.Buffer
