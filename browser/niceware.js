@@ -5162,7 +5162,7 @@ module.exports = [
 'blowier',
 'blowiest',
 'blowing',
-'blowjob',
+'blowlamp',
 'blown',
 'blowoff',
 'blowout',
