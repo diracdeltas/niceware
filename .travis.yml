@@ -1,6 +1,0 @@
-sudo: false
-language: node_js
-node_js:
-  - "node"
-script:
-  - yarn run lint && yarn audit && yarn test
