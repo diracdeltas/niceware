@@ -46,7 +46,7 @@ test('bytesToPassphrase', function (t) {
     q.equal('zyzzyva',
       stringify(niceware.bytesToPassphrase(Buffer.from([0xff, 0xff]))))
     q.equal(
-      'a bioengineering balloted gobbledegook creneled written depriving zyzzyva',
+      'a billet baiting glum crawl writhing deplane zyzzyva',
       stringify(niceware.bytesToPassphrase(Buffer.from(
         [0, 0, 17, 212, 12, 140, 90, 247, 46, 83, 254, 60, 54, 169, 255, 255])))
     )
@@ -73,7 +73,7 @@ test('passphraseToBytes', function (t) {
       niceware.passphraseToBytes(arrayify('zyzzyva'))
     ))
     q.ok(Buffer.from([0, 0, 17, 212, 12, 140, 90, 247, 46, 83, 254, 60, 54, 169, 255, 255]).equals(
-      niceware.passphraseToBytes(arrayify('A bioengineering Balloted gobbledegooK cReneled Written depriving zyzzyva'))
+      niceware.passphraseToBytes(arrayify('A billet baiting glum Crawl writhing dePlanE zyzzYvA'))
     ))
   })
 })
