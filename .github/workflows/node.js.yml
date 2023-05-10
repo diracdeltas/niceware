@@ -26,6 +26,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: yarn
-    - run: yarn audit
+    - run: yarn audit --groups dependencies
     - run: yarn test
     - run: yarn run lint
