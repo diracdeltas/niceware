@@ -111,6 +111,7 @@ NOTE: `size` must be an even number.
 * Chrome extension, thanks to Noah Feder: https://chrome.google.com/webstore/detail/niceware-password/dhnichgmciickpnnnhfcljljnfomadag
 * pip package, thanks to Alex Willmer: https://pypi.python.org/pypi/niceware
 * CLI, thanks to Alex Cross: https://www.npmjs.com/package/nicepass
+* TypeScript package that exports ESM/CommonJS modules, supports Deno, and improves DX: https://github.com/grempe/niceware-ts
 
 ## Credits
 
